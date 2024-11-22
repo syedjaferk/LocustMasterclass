@@ -1,0 +1,5 @@
+docker run -p 6379:6379 --rm redislabs/redismod:latest
+
+docker run --name mongo_container -p 27017:27017 --rm mongo
+
+docker exec -i mongo_container sh -c 'mongorestore --archive' < 2l_data.dump
